@@ -1,0 +1,17 @@
+name: strainline
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - r
+dependencies:
+  - minimap2
+  - spoa
+  - samtools
+  - dazz_db
+  - daligner
+  - metabat2
+  - python
+  - ca-certificates
+  - openssl
+prefix: /home/jshaw/miniforge3/envs/strainline

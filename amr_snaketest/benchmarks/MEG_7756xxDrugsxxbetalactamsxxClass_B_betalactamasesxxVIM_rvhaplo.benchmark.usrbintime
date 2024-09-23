@@ -1,0 +1,23 @@
+	Command being timed: "./rvhaplo.sh -i ../data_spike/MEG_7756xxDrugsxxbetalactamsxxClass_B_betalactamasesxxVIM.bam -o ../results_spike/MEG_7756xxDrugsxxbetalactamsxxClass_B_betalactamasesxxVIM_rvhaplo -r .././clean_megares.fasta -t 10"
+	User time (seconds): 390.49
+	System time (seconds): 23.45
+	Percent of CPU this job got: 467%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:28.50
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 620804
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 4760
+	Minor (reclaiming a frame) page faults: 915295
+	Voluntary context switches: 93242
+	Involuntary context switches: 23022
+	Swaps: 0
+	File system inputs: 960272
+	File system outputs: 635800
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

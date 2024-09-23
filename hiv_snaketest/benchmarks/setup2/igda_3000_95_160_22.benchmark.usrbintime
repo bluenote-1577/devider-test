@@ -1,0 +1,29 @@
+	Command being timed: "/bin/sh -c 
+            igda_align_ont results/setup2/3000_95_160_22.bam sfu_hivs/OR483991.1.fasta.cleaned.fa results/setup2/igda_3000_95_160_22.sam 10;
+            sam2bam results/setup2/igda_3000_95_160_22.sam results/setup2/igda_3000_95_160_22.bam;
+            igda_pipe_detect -m ont results/setup2/igda_3000_95_160_22.bam sfu_hivs/OR483991.1.fasta.cleaned.fa ./igda_contextmodel/ont/ont_context_effect_read_qv_12_base_qv_12 results/setup2/igda_3000_95_160_22_igda_detect;
+            rm -r results/setup2/igda_3000_95_160_22;
+            igda_pipe_phase -m ont -n 10 results/setup2/igda_3000_95_160_22_igda_detect sfu_hivs/OR483991.1.fasta.cleaned.fa results/setup2/igda_3000_95_160_22;
+            cp results/setup2/igda_3000_95_160_22/*.fa results/setup2/igda_3000_95_160_22/results.txt"
+	User time (seconds): 40.06
+	System time (seconds): 1.20
+	Percent of CPU this job got: 180%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:22.86
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 235760
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 47
+	Minor (reclaiming a frame) page faults: 161625
+	Voluntary context switches: 13411
+	Involuntary context switches: 83
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 838032
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

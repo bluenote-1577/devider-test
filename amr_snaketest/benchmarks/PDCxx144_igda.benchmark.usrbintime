@@ -1,0 +1,29 @@
+	Command being timed: "/bin/sh -c 
+            igda_align_ont data/PDCxx144.bam data/PDCxx144.cleaned.fasta results/PDCxx144_igda.sam 10;
+            sam2bam results/PDCxx144_igda.sam results/PDCxx144_igda.bam;
+            igda_pipe_detect -l 300 -m ont results/PDCxx144_igda.bam data/PDCxx144.cleaned.fasta ./igda_contextmodel/ont/ont_context_effect_read_qv_12_base_qv_12 results/PDCxx144_igda_igda_detect;
+            rm -r results/PDCxx144_igda;
+            igda_pipe_phase -m ont -n 10 results/PDCxx144_igda_igda_detect data/PDCxx144.cleaned.fasta results/PDCxx144_igda;
+            cp results/PDCxx144_igda/*.fa results/PDCxx144_igda/results.txt"
+	User time (seconds): 53.38
+	System time (seconds): 1.14
+	Percent of CPU this job got: 160%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:33.95
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 169652
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 33
+	Minor (reclaiming a frame) page faults: 121118
+	Voluntary context switches: 8760
+	Involuntary context switches: 78
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 469320
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

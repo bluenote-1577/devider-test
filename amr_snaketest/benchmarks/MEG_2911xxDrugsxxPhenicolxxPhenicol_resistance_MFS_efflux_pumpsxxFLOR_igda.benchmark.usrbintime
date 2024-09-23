@@ -1,0 +1,29 @@
+	Command being timed: "/bin/sh -c 
+            igda_align_ont data_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR.bam data_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR.cleaned.fasta results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda.sam 10;
+            sam2bam results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda.sam results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda.bam;
+            igda_pipe_detect -l 300 -m ont results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda.bam data_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR.cleaned.fasta ./igda_contextmodel/ont/ont_context_effect_read_qv_12_base_qv_12 results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda_igda_detect;
+            rm -r results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda;
+            igda_pipe_phase -m ont -n 10 results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda_igda_detect data_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR.cleaned.fasta results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda;
+            cp results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda/*.fa results_spike/MEG_2911xxDrugsxxPhenicolxxPhenicol_resistance_MFS_efflux_pumpsxxFLOR_igda/results_spike.txt"
+	User time (seconds): 26.85
+	System time (seconds): 0.72
+	Percent of CPU this job got: 154%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:17.79
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 145984
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 1
+	Minor (reclaiming a frame) page faults: 103677
+	Voluntary context switches: 6922
+	Involuntary context switches: 201
+	Swaps: 0
+	File system inputs: 8
+	File system outputs: 427632
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

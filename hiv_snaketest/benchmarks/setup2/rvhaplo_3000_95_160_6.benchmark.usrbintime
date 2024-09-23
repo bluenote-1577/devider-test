@@ -1,0 +1,23 @@
+	Command being timed: "./rvhaplo.sh -i ../results/setup2/3000_95_160_6.bam -o ../results/setup2/rvhaplo_3000_95_160_6 -r ../sfu_hivs/OR483991.1.fasta -t 10"
+	User time (seconds): 269.91
+	System time (seconds): 43.44
+	Percent of CPU this job got: 129%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 4:01.55
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 872000
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 101
+	Minor (reclaiming a frame) page faults: 1766249
+	Voluntary context switches: 213356
+	Involuntary context switches: 87813
+	Swaps: 0
+	File system inputs: 20400
+	File system outputs: 310328
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

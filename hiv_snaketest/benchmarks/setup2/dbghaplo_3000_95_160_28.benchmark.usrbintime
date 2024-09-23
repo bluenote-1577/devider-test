@@ -1,0 +1,23 @@
+	Command being timed: "dbghap -b results/setup2/3000_95_160_28.bam -v results/setup2/3000_95_160_28.vcf.gz -o results/setup2/dbghaplo_3000_95_160_28 -t 1 -r sfu_hivs/OR483991.1.fasta --overwrite"
+	User time (seconds): 14.46
+	System time (seconds): 0.27
+	Percent of CPU this job got: 99%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:14.82
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 427228
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 0
+	Minor (reclaiming a frame) page faults: 97683
+	Voluntary context switches: 18
+	Involuntary context switches: 598
+	Swaps: 0
+	File system inputs: 42784
+	File system outputs: 5528
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

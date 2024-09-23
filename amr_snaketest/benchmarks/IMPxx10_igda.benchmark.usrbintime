@@ -1,0 +1,29 @@
+	Command being timed: "/bin/sh -c 
+            igda_align_ont data/IMPxx10.bam data/IMPxx10.cleaned.fasta results/IMPxx10_igda.sam 10;
+            sam2bam results/IMPxx10_igda.sam results/IMPxx10_igda.bam;
+            igda_pipe_detect -l 300 -m ont results/IMPxx10_igda.bam data/IMPxx10.cleaned.fasta ./igda_contextmodel/ont/ont_context_effect_read_qv_12_base_qv_12 results/IMPxx10_igda_igda_detect;
+            rm -r results/IMPxx10_igda;
+            igda_pipe_phase -m ont -n 10 results/IMPxx10_igda_igda_detect data/IMPxx10.cleaned.fasta results/IMPxx10_igda;
+            cp results/IMPxx10_igda/*.fa results/IMPxx10_igda/results.txt"
+	User time (seconds): 20.26
+	System time (seconds): 0.73
+	Percent of CPU this job got: 166%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:12.58
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 72364
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 91
+	Minor (reclaiming a frame) page faults: 88311
+	Voluntary context switches: 7035
+	Involuntary context switches: 43
+	Swaps: 0
+	File system inputs: 41592
+	File system outputs: 212304
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

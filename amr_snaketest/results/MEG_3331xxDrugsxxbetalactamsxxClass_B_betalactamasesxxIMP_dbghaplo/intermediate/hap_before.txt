@@ -1,0 +1,15 @@
+>Contig:MEG_3331xxDrugsxxbetalactamsxxClass_B_betalactamasesxxIMP,Range:ALL-ALL,Haplotype:0,Abundance:20.36,Depth:536.58
+000000000000
+
+>Contig:MEG_3331xxDrugsxxbetalactamsxxClass_B_betalactamasesxxIMP,Range:ALL-ALL,Haplotype:1,Abundance:37.20,Depth:980.67
+010000001000
+
+>Contig:MEG_3331xxDrugsxxbetalactamsxxClass_B_betalactamasesxxIMP,Range:ALL-ALL,Haplotype:2,Abundance:15.56,Depth:410.25
+001000001000
+
+>Contig:MEG_3331xxDrugsxxbetalactamsxxClass_B_betalactamasesxxIMP,Range:ALL-ALL,Haplotype:3,Abundance:16.03,Depth:422.67
+000111111011
+
+>Contig:MEG_3331xxDrugsxxbetalactamsxxClass_B_betalactamasesxxIMP,Range:ALL-ALL,Haplotype:4,Abundance:10.84,Depth:285.83
+100000001000
+
