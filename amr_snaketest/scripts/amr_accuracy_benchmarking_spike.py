@@ -207,7 +207,10 @@ for instance in yaml_data['instances']:
     true_qnames = [x[1] for x in true_snp_vector_qname]
 
     for alg in algo:
-        file = "results_spike/{}_{}/results_spike.bam".format(arg, alg)
+        if 'dbghap' in algo:
+            file = "results_spike_dbghap/{}_{}/results_spike.bam".format(arg, alg)
+        else:
+            file = "results_spike/{}_{}/results_spike.bam".format(arg, alg)
         if not os.path.exists(file):
             continue
 

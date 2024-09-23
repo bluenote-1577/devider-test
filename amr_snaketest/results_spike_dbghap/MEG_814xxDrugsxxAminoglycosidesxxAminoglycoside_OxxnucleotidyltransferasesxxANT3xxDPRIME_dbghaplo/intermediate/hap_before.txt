@@ -1,0 +1,6 @@
+>Contig:MEG_814xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:0,Abundance:86.96,Depth:577.00
+00
+
+>Contig:MEG_814xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:1,Abundance:13.04,Depth:116.00
+-1
+

@@ -1,0 +1,6 @@
+>Contig:MEG_4587xxDrugsxxbetalactamsxxClass_D_betalactamasesxxOXA,Range:ALL-ALL,Haplotype:0,Abundance:53.51,Depth:582.00
+111
+
+>Contig:MEG_4587xxDrugsxxbetalactamsxxClass_D_betalactamasesxxOXA,Range:ALL-ALL,Haplotype:1,Abundance:46.49,Depth:505.67
+000
+

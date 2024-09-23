@@ -1,0 +1,15 @@
+>Contig:MEG_3674xxDrugsxxLipopeptidesxxColistin_phosphoethanolamine_transferasexxMCR,Range:ALL-ALL,Haplotype:0,Abundance:17.90,Depth:352.40
+01100
+
+>Contig:MEG_3674xxDrugsxxLipopeptidesxxColistin_phosphoethanolamine_transferasexxMCR,Range:ALL-ALL,Haplotype:1,Abundance:12.73,Depth:250.60
+00110
+
+>Contig:MEG_3674xxDrugsxxLipopeptidesxxColistin_phosphoethanolamine_transferasexxMCR,Range:ALL-ALL,Haplotype:2,Abundance:10.31,Depth:203.00
+00101
+
+>Contig:MEG_3674xxDrugsxxLipopeptidesxxColistin_phosphoethanolamine_transferasexxMCR,Range:ALL-ALL,Haplotype:3,Abundance:24.93,Depth:490.80
+10100
+
+>Contig:MEG_3674xxDrugsxxLipopeptidesxxColistin_phosphoethanolamine_transferasexxMCR,Range:ALL-ALL,Haplotype:4,Abundance:34.12,Depth:671.60
+00000
+

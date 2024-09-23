@@ -1,0 +1,9 @@
+>Contig:MEG_8097xxDrugsxxbetalactamsxxClass_C_betalactamasesxxFOX,Range:ALL-ALL,Haplotype:0,Abundance:27.87,Depth:500.07
+111111111111111111111111111111111111111111
+
+>Contig:MEG_8097xxDrugsxxbetalactamsxxClass_C_betalactamasesxxFOX,Range:ALL-ALL,Haplotype:1,Abundance:26.15,Depth:469.24
+111111111111111111111111111011111111111111
+
+>Contig:MEG_8097xxDrugsxxbetalactamsxxClass_C_betalactamasesxxFOX,Range:ALL-ALL,Haplotype:2,Abundance:45.97,Depth:824.86
+000000000000000000000000000000000000000000
+

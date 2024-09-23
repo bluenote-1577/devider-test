@@ -1,0 +1,6 @@
+Contig:MEG_4136xxDrugsxxbetalactamsxxClass_B_betalactamasesxxNDM,Range:ALL-ALL	Haplotype:0	Haplotype:1	Haplotype:2
+283	1:0.99	0:0.99	0:0.96
+388	1:0.97	0:1.00	1:1.00
+389	0:0.98	0:0.99	1:1.00
+460	1:0.99	0:0.99	0:1.00
+698	0:0.99	0:0.99	1:0.99
