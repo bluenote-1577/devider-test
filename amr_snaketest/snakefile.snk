@@ -1,0 +1,204 @@
+import yaml
+out_dir = "results"
+#algo = ['rvhaplo', 'dbghaplo', 'igda', 'cliqueSNV']
+algo = [ 'dbghaplo']
+# Load the config file
+with open("auto_config_megares.yaml", "r") as f:
+    config = yaml.safe_load(f)
+
+# List of instances
+args = [x['arg'] for x in config['instances']]
+db = "./clean_megares.fasta"
+
+rule all:
+    input:
+        #expand("floria_{arg}", arg=args),
+        #expand("tagged_{arg}", arg=args)
+        expand("results/{arg}_{alg}/results.txt", arg=args, alg=algo),
+        expand("results/{arg}_{alg}/results.bam", arg=args, alg=algo),
+        expand("data/{arg}_true.vcf.gz", arg=args)
+
+for instance in config['instances']:
+    rule:
+        name: f"extract_{instance['arg']}"
+        input:
+            fasta= db
+        output:
+            expand("data/{genome}.fasta", genome=instance['genomes'])
+        params:
+            genomes=instance['genomes']
+        run:
+            for genome in params.genomes:
+                gn_esc = genome.replace("|", "\|")
+                shell("samtools faidx {input.fasta} {gn_esc} > data/{gn_esc}.fasta")
+
+    rule:
+        name: f"make_fastq_{instance['arg']}"
+        input:
+            expand("data/{genome}.fasta", genome=instance['genomes'])
+        output:
+            expand("data/{arg}.fastq", arg = instance['arg'])
+        params:
+            cov = instance['coverages']
+        run:
+            for i in range(len(input)):
+                gn_esc = input[i].replace("|", "\|")
+                cov = params.cov[i]
+                shell("badread simulate --quantity {cov}x --length 1500,200 --reference {gn_esc} >> {output}")
+    rule:
+        name: f"minimap_{instance['arg']}"
+        input:
+            ref = "data/" + instance['arg'] + ".fasta",
+            fastq = expand("data/{arg}.fastq", arg=instance['arg'])
+        output:
+            bam = expand("data/{arg}.bam", arg=instance['arg'])
+        run:
+            shell("minimap2 -ax map-ont {input.ref} {input.fastq} | samtools sort -o {output}")
+            shell("samtools index {output}")
+
+    rule:
+        name: f"lofreq_{instance['arg']}"
+        input:
+            bam = expand("data/{arg}.bam", arg=instance['arg']),
+            ref = db
+        output:
+            vcf = expand("data/{arg}.vcf.gz", arg=instance['arg'])
+        params:
+            temp1 = temp(expand("data/temp{arg}.vcf", arg=instance['arg'])),
+            temp = expand("data/{arg}.vcf", arg=instance['arg']),
+            usrbintime = expand("benchmarks/{arg}_lofreq.usrbintime", arg=instance['arg'])
+        run:
+            shell("/usr/bin/time -v -o {params.usrbintime} ./lofreq_star-2.1.4_linux-x86-64/bin/lofreq call -B -f {input.ref} {input.bam} -o {params.temp} --force-overwrite")
+            #get only alleles with AF > 0.1 and < 0.9
+            shell("bgzip {params.temp}")
+            shell("bcftools index {output}")
+    
+    rule:
+        name: f"clean_genome_{instance['arg']}"
+        input:
+            "data/" + instance['arg'] + ".fasta"
+        output:
+            "data/" + instance['arg'] + ".cleaned.fasta"
+        conda:
+            "envs/igda.yaml"
+        shell:
+            """
+            fasta2upper {input} {input}.cleaned;
+            fastaclean {input}.cleaned {output}; 
+            """
+    
+    rule:
+        name: f"run_rvhaplo_{instance['arg']}"
+        input:
+            expand("data/{arg}.bam", arg=instance['arg']),
+        output:
+            expand("results/{arg}_rvhaplo/results.txt", arg=instance['arg'])
+        conda:
+            "envs/rvhaplo.yaml"
+        params:
+            out = expand(out_dir + "/{arg}_rvhaplo", arg=instance['arg']),
+            ref_genome = db,
+            time_file = expand("benchmarks/{arg}_rvhaplo.benchmark.usrbintime", arg=instance['arg'])
+        threads:
+            10
+        shell:
+            "cd RVHaplo; /usr/bin/time -v -o ../{params.time_file} ./rvhaplo.sh -i ../{input} -o ../{params.out} -r ../{params.ref_genome} -t 10; cd ..; mv {params.out}/*haplotypes.fasta {output}"
+
+
+    rule:
+        name: f"run_dbghaplo_{instance['arg']}"
+        input:
+            bam = expand("data/{arg}.bam", arg=instance['arg']),
+            vcf = expand("data/{arg}.vcf.gz", arg=instance['arg'])
+        output:
+            expand(out_dir + "/{arg}_dbghaplo/results.txt", arg=instance['arg'])
+        params:
+            ref_genome = db,
+            out = expand(out_dir + "/{arg}_dbghaplo", arg=instance['arg']),
+            time_file = expand("benchmarks/{arg}_dbghaplo.benchmark.usrbintime", arg=instance['arg'])
+        threads:
+            1
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} dbghaplo -b {input.bam} -v {input.vcf} -o {params.out} -t 1 -r {params.ref_genome} --overwrite;
+            cp {params.out}/majority_vote_haplotypes.fasta {output}
+            """
+
+
+
+    rule:
+        name: f"run_igda_{instance['arg']}"
+        input:
+            ref_gn = "data/" + instance['arg'] + ".cleaned.fasta",
+            bam = expand("data/{arg}.bam", arg=instance['arg'])
+        output:
+            expand("results/{arg}_igda/results.txt", arg=instance['arg'])
+        conda:
+            "envs/igda.yaml"
+        params:
+            out = expand(out_dir + "/{arg}_igda", arg=instance['arg']),
+            time_file = expand("benchmarks/{arg}_igda.benchmark.usrbintime", arg=instance['arg'])
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} /bin/sh -c '
+            igda_align_ont {input.bam} {input.ref_gn} {params.out}.sam 10;
+            sam2bam {params.out}.sam {params.out}.bam;
+            igda_pipe_detect -l 300 -m ont {params.out}.bam {input.ref_gn} ./igda_contextmodel/ont/ont_context_effect_read_qv_12_base_qv_12 {params.out}_igda_detect;
+            rm -r {params.out};
+            igda_pipe_phase -m ont -n 10 {params.out}_igda_detect {input.ref_gn} {params.out};
+            cp {params.out}/*.fa {output}'
+            """
+    
+    rule:
+        name: f"get_true_vcf_{instance['arg']}"
+        input: 
+            genomes = expand("data/{genome}.fasta", genome=instance['genomes']),
+            ref_gn = expand("data/{arg}.fasta", arg=instance['arg'])
+        output:
+            vcf = "data/" + instance['arg'] + "_true.vcf.gz",
+            true_bam = "data/" + instance['arg'] + "_true.bam"
+        params:
+            vcf_prior = "data/" + instance['arg'] + "_true.vcf"
+        run:
+            gn_escs = []
+            for genome in input.genomes:
+                gn_esc = genome.replace("|", "\|")
+                gn_escs.append(gn_esc)
+                
+            shell("minimap2 --MD -a  {input.ref_gn} {gn_escs} | samtools sort -o {output.true_bam}; samtools index {output.true_bam}");
+            shell("python scripts/snps_from_bam.py {output.true_bam} {input.ref_gn} {params.vcf_prior}");
+            shell("bgzip {params.vcf_prior}; bcftools index {params.vcf_prior}.gz -f");
+
+    rule:
+        name: f"results_to_bam_{instance['arg']}"
+        input:
+            expand("results/{arg}_{alg}/results.txt", arg=instance['arg'], alg=algo),
+        output:
+            expand("results/{arg}_{alg}/results.bam", arg=instance['arg'], alg=algo),
+        params: 
+            ref_genome = 'data/' + instance['arg'] + '.fasta'
+        run:
+            for i in range(len(input)):
+                shell(f"minimap2 --MD -a {params.ref_genome} {input[i]} | samtools sort -o {output[i]}; samtools index {output[i]}")
+
+
+    rule:
+        name: f"run_cliqueSNV_{instance['arg']}"
+        input:
+            expand("data/{arg}.bam", arg=instance['arg'])
+        output:
+            expand(out_dir + "/{arg}_cliqueSNV/results.txt", arg=instance['arg'])
+        params:
+            out = expand(out_dir + "/{arg}_cliqueSNV", arg=instance['arg']),
+            ref_genome = 'data/' + instance['arg'] + '.fasta',
+            time_file = expand("benchmarks/{arg}_cliqueSNV.benchmark.usrbintime", arg=instance['arg'])
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} java -jar clique-snv.jar -m snv-pacbio -in {input} -outDir {params.out} -threads 10;
+            mv {params.out}/*.fasta {output}
+            """ 
+

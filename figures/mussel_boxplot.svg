@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg xmlns:xlink="http://www.w3.org/1999/xlink" width="144pt" height="144pt" viewBox="0 0 144 144" xmlns="http://www.w3.org/2000/svg" version="1.1">
+ <metadata>
+  <rdf:RDF xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:Work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:date>2024-09-23T17:25:57.957390</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:Agent>
+      <dc:title>Matplotlib v3.8.2, https://matplotlib.org/</dc:title>
+     </cc:Agent>
+    </dc:creator>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="figure_1">
+  <g id="patch_1">
+   <path d="M 0 144 
+L 144 144 
+L 144 0 
+L 0 0 
+z
+" style="fill: #ffffff"/>
+  </g>
+  <g id="axes_1">
+   <g id="patch_2">
+    <path d="M 46.237563 132.94 
+L 136.44 132.94 
+L 136.44 28.555575 
+L 46.237563 28.555575 
+z
+" style="fill: #ffffff"/>
+   </g>
+   <g id="matplotlib.axis_1">
+    <g id="xtick_1">
+     <g id="line2d_1">
+      <defs>
+       <path id="mb0b49dbd86" d="M 0 0 
+L 0 3.5 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#mb0b49dbd86" x="91.338781" y="132.94" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+    </g>
+   </g>
+   <g id="matplotlib.axis_2">
+    <g id="ytick_1">
+     <g id="line2d_2">
+      <defs>
+       <path id="m91787840b7" d="M 0 0 
+L -3.5 0 
+" style="stroke: #000000; stroke-width: 0.8"/>
+      </defs>
+      <g>
+       <use xlink:href="#m91787840b7" x="46.237563" y="118.70576" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_1">
+      <text style="font: 7px 'arial'; text-anchor: end" x="39.237563" y="121.210995" transform="rotate(-0 39.237563 121.210995)">2.5</text>
+     </g>
+    </g>
+    <g id="ytick_2">
+     <g id="line2d_3">
+      <g>
+       <use xlink:href="#m91787840b7" x="46.237563" y="102.889938" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_2">
+      <text style="font: 7px 'arial'; text-anchor: end" x="39.237563" y="105.395173" transform="rotate(-0 39.237563 105.395173)">5.0</text>
+     </g>
+    </g>
+    <g id="ytick_3">
+     <g id="line2d_4">
+      <g>
+       <use xlink:href="#m91787840b7" x="46.237563" y="87.074116" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_3">
+      <text style="font: 7px 'arial'; text-anchor: end" x="39.237563" y="89.579351" transform="rotate(-0 39.237563 89.579351)">7.5</text>
+     </g>
+    </g>
+    <g id="ytick_4">
+     <g id="line2d_5">
+      <g>
+       <use xlink:href="#m91787840b7" x="46.237563" y="71.258294" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_4">
+      <text style="font: 7px 'arial'; text-anchor: end" x="39.237563" y="73.763529" transform="rotate(-0 39.237563 73.763529)">10.0</text>
+     </g>
+    </g>
+    <g id="ytick_5">
+     <g id="line2d_6">
+      <g>
+       <use xlink:href="#m91787840b7" x="46.237563" y="55.442472" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_5">
+      <text style="font: 7px 'arial'; text-anchor: end" x="39.237563" y="57.947707" transform="rotate(-0 39.237563 57.947707)">12.5</text>
+     </g>
+    </g>
+    <g id="ytick_6">
+     <g id="line2d_7">
+      <g>
+       <use xlink:href="#m91787840b7" x="46.237563" y="39.62665" style="stroke: #000000; stroke-width: 0.8"/>
+      </g>
+     </g>
+     <g id="text_6">
+      <text style="font: 7px 'arial'; text-anchor: end" x="39.237563" y="42.131885" transform="rotate(-0 39.237563 42.131885)">15.0</text>
+     </g>
+    </g>
+    <g id="text_7">
+     <text style="font: 7px 'arial'" transform="translate(12.655781 120.2431) rotate(-90)">Predicted # of haplotypes</text>
+     <text style="font: 7px 'arial'" transform="translate(20.141625 96.506537) rotate(-90)">per region</text>
+    </g>
+   </g>
+   <g id="patch_3">
+    <path d="M 55.257806 90.237281 
+L 127.419756 90.237281 
+L 127.419756 71.258294 
+L 55.257806 71.258294 
+L 55.257806 90.237281 
+z
+" clip-path="url(#p4872939196)" style="fill: #597dbf; stroke: #545454; stroke-linejoin: miter"/>
+   </g>
+   <g id="line2d_8">
+    <path d="M 91.338781 90.237281 
+L 91.338781 102.889938 
+" clip-path="url(#p4872939196)" style="fill: none; stroke: #545454"/>
+   </g>
+   <g id="line2d_9">
+    <path d="M 91.338781 71.258294 
+L 91.338781 58.605637 
+" clip-path="url(#p4872939196)" style="fill: none; stroke: #545454"/>
+   </g>
+   <g id="line2d_10">
+    <path d="M 73.298294 102.889938 
+L 109.379269 102.889938 
+" clip-path="url(#p4872939196)" style="fill: none; stroke: #545454; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_11">
+    <path d="M 73.298294 58.605637 
+L 109.379269 58.605637 
+" clip-path="url(#p4872939196)" style="fill: none; stroke: #545454; stroke-linecap: square"/>
+   </g>
+   <g id="line2d_12">
+    <defs>
+     <path id="mbad245df87" d="M 0 3 
+C 0.795609 3 1.55874 2.683901 2.12132 2.12132 
+C 2.683901 1.55874 3 0.795609 3 0 
+C 3 -0.795609 2.683901 -1.55874 2.12132 -2.12132 
+C 1.55874 -2.683901 0.795609 -3 0 -3 
+C -0.795609 -3 -1.55874 -2.683901 -2.12132 -2.12132 
+C -2.683901 -1.55874 -3 -0.795609 -3 0 
+C -3 0.795609 -2.683901 1.55874 -2.12132 2.12132 
+C -1.55874 2.683901 -0.795609 3 0 3 
+z
+" style="stroke: #545454"/>
+    </defs>
+    <g clip-path="url(#p4872939196)">
+     <use xlink:href="#mbad245df87" x="91.338781" y="33.300322" style="fill-opacity: 0; stroke: #545454"/>
+    </g>
+   </g>
+   <g id="line2d_13">
+    <path d="M 46.237563 64.931966 
+L 136.44 64.931966 
+" clip-path="url(#p4872939196)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #000000; stroke-width: 1.5"/>
+   </g>
+   <g id="line2d_14">
+    <path d="M 46.237563 77.584623 
+L 136.44 77.584623 
+" clip-path="url(#p4872939196)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"/>
+   </g>
+   <g id="line2d_15">
+    <path d="M 46.237563 121.868925 
+L 136.44 121.868925 
+" clip-path="url(#p4872939196)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ff0000; stroke-width: 1.5"/>
+   </g>
+   <g id="line2d_16">
+    <path d="M 46.237563 128.195253 
+L 136.44 128.195253 
+" clip-path="url(#p4872939196)" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ffa500; stroke-width: 1.5"/>
+   </g>
+   <g id="line2d_17">
+    <path d="M 55.257806 77.584623 
+L 127.419756 77.584623 
+" clip-path="url(#p4872939196)" style="fill: none; stroke: #545454"/>
+   </g>
+   <g id="patch_4">
+    <path d="M 46.237563 132.94 
+L 46.237563 28.555575 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="patch_5">
+    <path d="M 46.237563 132.94 
+L 136.44 132.94 
+" style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"/>
+   </g>
+   <g id="text_8">
+    <text style="font: 8.4px 'arial'" transform="translate(45.569281 13.572563)">dbghaplo haplotyping on</text>
+    <text style="font: 8.4px 'arial'" transform="translate(58.184375 22.555575)">candidate regions</text>
+   </g>
+   <g id="legend_1">
+    <g id="line2d_18">
+     <path d="M 1.722812 37.501356 
+L 8.722812 37.501356 
+L 15.722812 37.501356 
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #000000; stroke-width: 1.5"/>
+    </g>
+    <g id="text_9">
+     <text style="font: 7px 'arial'; text-anchor: start" x="21.322812" y="39.951356" transform="rotate(-0 21.322812 39.951356)">Published estimate (11 haplotypes)</text>
+    </g>
+    <g id="line2d_19">
+     <path d="M 1.722812 47.570419 
+L 8.722812 47.570419 
+L 15.722812 47.570419 
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #0000ff; stroke-width: 1.5"/>
+    </g>
+    <g id="text_10">
+     <text style="font: 7px 'arial'; text-anchor: start" x="21.322812" y="50.020419" transform="rotate(-0 21.322812 50.020419)">dbghaplo median (9 haplotypes)</text>
+    </g>
+    <g id="line2d_20">
+     <path d="M 1.722812 57.639481 
+L 8.722812 57.639481 
+L 15.722812 57.639481 
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ff0000; stroke-width: 1.5"/>
+    </g>
+    <g id="text_11">
+     <text style="font: 7px 'arial'; text-anchor: start" x="21.322812" y="60.089481" transform="rotate(-0 21.322812 60.089481)">igda median (2 haplotypes)</text>
+    </g>
+    <g id="line2d_21">
+     <path d="M 1.722812 67.708544 
+L 8.722812 67.708544 
+L 15.722812 67.708544 
+" style="fill: none; stroke-dasharray: 5.55,2.4; stroke-dashoffset: 0; stroke: #ffa500; stroke-width: 1.5"/>
+    </g>
+    <g id="text_12">
+     <text style="font: 7px 'arial'; text-anchor: start" x="21.322812" y="70.158544" transform="rotate(-0 21.322812 70.158544)">rvhaplo (1 haplotypes)</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clipPath id="p4872939196">
+   <rect x="46.237563" y="28.555575" width="90.202438" height="104.384425"/>
+  </clipPath>
+ </defs>
+</svg>
