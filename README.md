@@ -1,5 +1,8 @@
 ### Scripts for reproducing plots for `devider`.
 
+* `conda_env.yaml` is the conda environment used for benchmarking.
+* `pip_requirements.txt` is the python packages used for benhcmarking.
+
 #### Fig. 2
 
 ```sh
