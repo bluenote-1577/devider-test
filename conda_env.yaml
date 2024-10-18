@@ -1,0 +1,28 @@
+name: bioinf
+channels:
+  - bioconda
+  - conda-forge
+  - defaults
+  - r
+dependencies:
+  - samtools
+  - minimap2
+  - bwa
+  - python=3.9
+  - ca-certificates
+  - openssl
+  - matplotlib
+  - floria
+  - certifi
+  - metabat2
+  - skani
+  - fairy
+  - diamond
+  - metagraph
+  - flye
+  - longshot
+  - snakemake
+  - badread
+  - lofreq
+  - hyphy
+prefix: /home/jshaw/miniforge3/envs/bioinf
