@@ -1,5 +1,4 @@
 Contig:MEG_5291xxDrugsxxbetalactamsxxClass_A_betalactamasesxxOXY,Range:ALL-ALL	Haplotype:0	Haplotype:1
-464	0:0.98	1:1.00
-576	0:1.00	1:1.00
-714	0:0.96	1:0.97
-847	0:1.00	1:0.99
+576	1:1.00	0:1.00
+714	1:0.98	0:1.00
+847	1:1.00	0:1.00

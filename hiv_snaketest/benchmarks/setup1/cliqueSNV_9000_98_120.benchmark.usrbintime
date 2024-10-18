@@ -1,0 +1,23 @@
+	Command being timed: "java -jar clique-snv.jar -m snv-pacbio -in results/setup1/9000_98_120.bam -outDir results/setup1/cliqueSNV_9000_98_120 -threads 10"
+	User time (seconds): 345.61
+	System time (seconds): 1.58
+	Percent of CPU this job got: 456%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 1:16.02
+	Average shared text size (kbytes): 0
+	Average unshared data size (kbytes): 0
+	Average stack size (kbytes): 0
+	Average total size (kbytes): 0
+	Maximum resident set size (kbytes): 1628344
+	Average resident set size (kbytes): 0
+	Major (requiring I/O) page faults: 45
+	Minor (reclaiming a frame) page faults: 49587
+	Voluntary context switches: 20440
+	Involuntary context switches: 145
+	Swaps: 0
+	File system inputs: 0
+	File system outputs: 592
+	Socket messages sent: 0
+	Socket messages received: 0
+	Signals delivered: 0
+	Page size (bytes): 4096
+	Exit status: 0

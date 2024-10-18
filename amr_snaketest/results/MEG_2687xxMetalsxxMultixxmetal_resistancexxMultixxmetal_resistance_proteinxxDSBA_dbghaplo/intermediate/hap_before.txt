@@ -1,39 +1,39 @@
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:0,Abundance:7.21,Depth:350.00
-1000210
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:0,Abundance:2.12,Depth:107.40
+00001-
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:1,Abundance:8.96,Depth:435.00
-0000000
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:1,Abundance:9.00,Depth:414.67
+320002
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:2,Abundance:4.42,Depth:214.71
-0211000
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:2,Abundance:3.15,Depth:145.17
+213102
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:3,Abundance:14.48,Depth:703.14
-0020200
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:3,Abundance:4.60,Depth:212.17
+021100
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:4,Abundance:3.02,Depth:146.86
-2131020
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:4,Abundance:7.76,Depth:357.50
+301011
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:5,Abundance:7.69,Depth:373.57
-3010110
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:5,Abundance:15.51,Depth:715.00
+002020
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:6,Abundance:8.66,Depth:420.43
-2210020
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:6,Abundance:2.29,Depth:105.33
+000103
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:7,Abundance:8.39,Depth:407.43
-3200020
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:7,Abundance:7.68,Depth:354.00
+100021
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:8,Abundance:16.75,Depth:813.29
-0230100
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:8,Abundance:9.17,Depth:422.50
+221002
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:9,Abundance:0.55,Depth:26.71
-0000020
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:9,Abundance:17.44,Depth:803.67
+023010
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:10,Abundance:5.34,Depth:358.20
-1120--0
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:10,Abundance:12.29,Depth:676.60
+302-03
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:11,Abundance:12.27,Depth:691.33
-302-030
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:11,Abundance:8.36,Depth:385.17
+000000
 
->Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:12,Abundance:2.26,Depth:120.40
---01030
+>Contig:MEG_2687xxMetalsxxMultixxmetal_resistancexxMultixxmetal_resistance_proteinxxDSBA,Range:ALL-ALL,Haplotype:12,Abundance:0.64,Depth:35.00
+-00-03
 

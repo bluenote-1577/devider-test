@@ -1,18 +1,18 @@
-	Command being timed: "/home/jshaw/software/lofreq_star-2.1.4_linux-x86-64/bin/lofreq call -B -f sfu_hivs/OR483991.1.fasta results/setup1/9000_95_20.bam -o results/setup1/9000_95_20.vcf --force-overwrite"
-	User time (seconds): 9.76
-	System time (seconds): 0.44
+	Command being timed: "/home/jshaw/software/lofreq_star-2.1.4_linux-x86-64/bin/lofreq call -B -f sfu_hivs/OR483991.1.fasta results-k/setup1/9000_95_20.bam -o results-k/setup1/9000_95_20.vcf --force-overwrite"
+	User time (seconds): 11.19
+	System time (seconds): 0.61
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:10.20
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:11.82
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 22100
+	Maximum resident set size (kbytes): 22164
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 258760
-	Voluntary context switches: 33
-	Involuntary context switches: 32
+	Minor (reclaiming a frame) page faults: 259089
+	Voluntary context switches: 17
+	Involuntary context switches: 43
 	Swaps: 0
 	File system inputs: 0
 	File system outputs: 64

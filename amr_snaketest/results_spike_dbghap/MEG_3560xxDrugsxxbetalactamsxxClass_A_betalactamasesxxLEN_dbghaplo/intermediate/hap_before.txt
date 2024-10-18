@@ -1,12 +1,12 @@
->Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:0,Abundance:26.90,Depth:403.08
-010011001110
+>Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:0,Abundance:26.90,Depth:401.27
+01001101110
 
->Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:1,Abundance:25.71,Depth:385.25
-001100101110
+>Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:1,Abundance:25.70,Depth:383.36
+00110011110
 
->Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:2,Abundance:37.31,Depth:559.17
-000000000000
+>Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:2,Abundance:10.07,Depth:150.18
+10001101101
 
->Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:3,Abundance:10.08,Depth:151.08
-100011011101
+>Contig:MEG_3560xxDrugsxxbetalactamsxxClass_A_betalactamasesxxLEN,Range:ALL-ALL,Haplotype:3,Abundance:37.34,Depth:557.00
+00000000000
 

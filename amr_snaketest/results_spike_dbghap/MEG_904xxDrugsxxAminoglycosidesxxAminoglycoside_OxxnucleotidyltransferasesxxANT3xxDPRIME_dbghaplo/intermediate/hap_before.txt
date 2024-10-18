@@ -1,18 +1,21 @@
->Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:0,Abundance:0.41,Depth:14.00
-000000--
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:0,Abundance:20.67,Depth:593.12
+00010000
 
->Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:1,Abundance:33.21,Depth:972.75
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:1,Abundance:26.53,Depth:761.25
 11110000
 
->Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:2,Abundance:11.68,Depth:342.00
-00010010
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:2,Abundance:9.26,Depth:265.75
+10110000
 
->Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:3,Abundance:9.70,Depth:284.00
-00010100
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:3,Abundance:7.47,Depth:214.38
+00000000
 
->Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:4,Abundance:14.19,Depth:415.75
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:4,Abundance:14.24,Depth:408.62
 00011001
 
->Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:5,Abundance:30.81,Depth:902.62
-00010000
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:5,Abundance:11.92,Depth:342.12
+00010010
+
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:6,Abundance:9.90,Depth:284.00
+00010100
 

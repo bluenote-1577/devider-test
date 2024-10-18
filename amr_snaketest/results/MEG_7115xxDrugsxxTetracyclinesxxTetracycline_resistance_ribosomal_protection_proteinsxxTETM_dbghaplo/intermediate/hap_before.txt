@@ -1,48 +1,48 @@
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:0,Abundance:8.78,Depth:307.36
-10000011111111000000000000000000000000000111111111111111110
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:0,Abundance:1.56,Depth:72.74
+00000001111111111111111101-111100000000-------------------
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:1,Abundance:12.66,Depth:443.37
-10000001111111111111101111110100111100000111111111111110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:1,Abundance:8.51,Depth:383.15
+000000011111111111111111011010100000000-------------------
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:2,Abundance:4.26,Depth:149.07
-00000000111111111111111110110101111100000000000000011110001
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:2,Abundance:3.81,Depth:172.29
+00000001111111111111111101101011111000000-----------------
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:3,Abundance:6.88,Depth:240.75
-11110000000000000000000000000100000000110100000000001110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:3,Abundance:10.80,Depth:405.93
+1000011111111000000000000000000000000001000000000000000000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:4,Abundance:9.86,Depth:345.02
-10000011111111000000000000000000000000001000000000000000000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:4,Abundance:12.39,Depth:465.48
+1000000000000000000000000000000000000000000000001111110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:5,Abundance:1.82,Depth:64.69
-000000001111111111111111101-1111000000000000000000011110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:5,Abundance:1.22,Depth:45.97
+1000000000000000000000000000100000000110100000001111110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:6,Abundance:5.04,Depth:176.37
-11110000000000000000000000000000000000000000000001111110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:6,Abundance:11.85,Depth:445.36
+1000001111111111111101111110100111100000111111111111110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:7,Abundance:4.46,Depth:156.00
-10001111111111110000000000000000000000000000000001111110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:7,Abundance:8.19,Depth:307.95
+1000011111111000000000000000000000000000111111111111111110
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:8,Abundance:10.89,Depth:381.08
-10000000000000000000010000110101111111000000000000000010000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:8,Abundance:11.89,Depth:446.88
+1001000000000000000000000000100000000110100000000001110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:9,Abundance:11.55,Depth:404.51
-10000000000000000000000000000000000000000000000001111110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:9,Abundance:8.06,Depth:302.93
+1111000000000000000000000000000000000000000000000011110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:10,Abundance:0.61,Depth:21.36
-00000000111111111111111110110101000000000000000000111110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:10,Abundance:4.16,Depth:156.50
+1000111111111110000000000000000000000000000000000111110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:11,Abundance:1.35,Depth:47.29
-10000000000000000000000000000100000000110100000001111110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:11,Abundance:0.34,Depth:12.62
+1000000000000000000000000000000000000000000000000111110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:12,Abundance:2.86,Depth:100.24
-10000000000000000000000000000100000000110100000000001110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:12,Abundance:0.35,Depth:13.16
+1000000000000000000000000000100000000110100000000001110000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:13,Abundance:7.70,Depth:269.54
-00000000111111111111111110110101000000000000000000011110000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:13,Abundance:10.15,Depth:381.53
+1000000000000000000010000110101111111000000000000000010000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:14,Abundance:9.80,Depth:343.17
-10000000000000000000000000000000000000001000000000000000000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:14,Abundance:5.45,Depth:204.88
+0000000000000000000000000000000000000000000000000000000000
 
->Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:15,Abundance:1.36,Depth:77.97
------------------------110110101000000000000000000000000000
+>Contig:MEG_7115xxDrugsxxTetracyclinesxxTetracycline_resistance_ribosomal_protection_proteinsxxTETM,Range:ALL-ALL,Haplotype:15,Abundance:1.15,Depth:77.52
+-------------------------------000000000000000000011110001
 

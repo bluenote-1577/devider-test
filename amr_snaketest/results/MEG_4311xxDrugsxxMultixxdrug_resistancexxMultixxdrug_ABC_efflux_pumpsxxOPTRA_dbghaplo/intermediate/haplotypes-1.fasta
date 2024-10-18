@@ -1,21 +1,21 @@
->Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:0,Abundance:16.56,Depth:734.06
-0100001011
+>Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:0,Abundance:0.61,Depth:25.95
+00010000--
 
->Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:1,Abundance:2.90,Depth:128.43
-1101011111
-
->Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:2,Abundance:6.30,Depth:279.25
-1100111011
-
->Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:3,Abundance:26.82,Depth:1188.69
-1100000000
-
->Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:4,Abundance:8.15,Depth:361.14
-1110011011
-
->Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:5,Abundance:22.09,Depth:978.95
+>Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:1,Abundance:24.74,Depth:1060.67
 1101011000
 
->Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:6,Abundance:17.18,Depth:761.66
+>Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:2,Abundance:6.64,Depth:284.67
+1100111011
+
+>Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:3,Abundance:25.27,Depth:1083.64
 1000010011
+
+>Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:4,Abundance:3.00,Depth:128.43
+1101011111
+
+>Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:5,Abundance:26.95,Depth:1155.53
+1100000000
+
+>Contig:MEG_4311xxDrugsxxMultixxdrug_resistancexxMultixxdrug_ABC_efflux_pumpsxxOPTRA,Range:ALL-ALL,Haplotype:6,Abundance:12.80,Depth:548.62
+0100001011
 

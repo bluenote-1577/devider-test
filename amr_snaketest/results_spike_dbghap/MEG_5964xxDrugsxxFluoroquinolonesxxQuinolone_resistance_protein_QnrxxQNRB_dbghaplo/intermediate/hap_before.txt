@@ -1,27 +1,36 @@
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:0,Abundance:3.88,Depth:187.59
-00000100011100000
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:0,Abundance:0.58,Depth:27.76
+01001100000001010
 
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:1,Abundance:12.31,Depth:594.24
-01001100000011010
-
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:2,Abundance:10.39,Depth:501.47
-10000101001100000
-
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:3,Abundance:13.35,Depth:644.82
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:1,Abundance:13.57,Depth:644.82
 00100100100001121
 
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:4,Abundance:18.03,Depth:870.47
-00001110000000000
-
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:5,Abundance:8.60,Depth:415.24
-00001100000001010
-
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:6,Abundance:11.61,Depth:560.41
-00100100000000000
-
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:7,Abundance:12.90,Depth:622.88
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:2,Abundance:12.91,Depth:613.47
 00000000000000000
 
->Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:8,Abundance:8.94,Depth:431.53
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:3,Abundance:8.51,Depth:404.29
+00001100000001010
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:4,Abundance:8.96,Depth:425.88
 00010100000000000
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:5,Abundance:11.67,Depth:554.47
+00100100000000000
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:6,Abundance:15.65,Depth:744.00
+00001110000000000
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:7,Abundance:1.82,Depth:86.47
+01001100000000000
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:8,Abundance:10.52,Depth:499.76
+10000101001100000
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:9,Abundance:3.95,Depth:187.59
+00000100011100000
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:10,Abundance:11.05,Depth:525.00
+01001100000011010
+
+>Contig:MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB,Range:ALL-ALL,Haplotype:11,Abundance:0.62,Depth:29.47
+00001100000000000
 

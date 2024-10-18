@@ -1,0 +1,15 @@
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:0,Abundance:33.64,Depth:985.50
+11110000
+
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:1,Abundance:11.74,Depth:344.00
+00010010
+
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:2,Abundance:9.88,Depth:289.50
+00010100
+
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:3,Abundance:14.13,Depth:413.88
+00011001
+
+>Contig:MEG_904xxDrugsxxAminoglycosidesxxAminoglycoside_OxxnucleotidyltransferasesxxANT3xxDPRIME,Range:ALL-ALL,Haplotype:4,Abundance:30.61,Depth:896.62
+00010000
+
