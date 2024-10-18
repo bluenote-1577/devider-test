@@ -1,0 +1,65 @@
+import os
+
+# Load the configuration file
+configfile: "config.yaml"
+in_folder = 'sfu_hivs/'
+
+# List of all setups in config.yaml (e.g., setup1, setup2, ...)
+setups = config.keys()
+
+# Helper function to get genome base names
+def get_genome_bases(setup):
+    """Extracts genome base names from the genomes listed in a setup."""
+    return [genome for genome in config[setup]["genomes"]]
+
+# Precompute the input files for the rule "all"
+def generate_input_files():
+    input_files = []
+    for setup in setups:
+        genome_bases = get_genome_bases(setup)
+        lengths = config[setup]["lengths"]
+        identities = config[setup]["read_identities"]
+        coverages = config[setup]["coverages"]
+        
+        # Create all combinations of genome_base, length, identity, and coverage
+        for genome_base in genome_bases:
+            for length in lengths:
+                for coverage in coverages:
+                    identity = 98
+                    input_files.append(f"simulated_reads/{setup}/{genome_base}_{length}_{identity}_{coverage}.fastq")
+    return input_files
+
+# Define the rule "all"
+rule all:
+    input:
+        generate_input_files()
+
+# Define a rule for simulating reads using badreads
+rule simulate_reads:
+    input:
+        genome=lambda wildcards: [in_folder + g + '.1.fasta' for g in config[wildcards.setup]["genomes"] if g == wildcards.genome_base][0]
+    output:
+        fastq="simulated_reads/{setup}/{genome_base}_{length}_{identity}_{coverage}.fastq"
+    params:
+        length="{length}",
+        identity="{identity}",
+        coverage="{coverage}",
+        ratio=lambda wildcards: config[wildcards.setup]["ratio"][config[wildcards.setup]["genomes"].index(
+            [g for g in config[wildcards.setup]["genomes"] if g == wildcards.genome_base][0]
+        )],
+        total_coverage=lambda wildcards: config[wildcards.setup]["ratio"][config[wildcards.setup]["genomes"].index(
+            [g for g in config[wildcards.setup]["genomes"] if g == wildcards.genome_base][0]
+        )] * int(wildcards.coverage)
+        
+    threads: 1
+    shell:
+        """
+        depth={params.coverage}*{params.ratio}
+        badread simulate \
+            --reference {input.genome} \
+            --length {params.length},500 \
+            --identity {params.identity},99.5,2.5 \
+            --quantity {params.total_coverage}x \
+            > {output.fastq}
+        """
+

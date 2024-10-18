@@ -1,0 +1,141 @@
+import yaml
+out_dir = "results"
+algo = ['dbghaplo', 'igda', 'cliqueSNV']
+#algo = ['rvhaplo', 'dbghaplo', 'igda']
+# Load the config file
+
+bed_coords = []
+with open("out.bed") as f:
+    for line in f:
+        bed_coords.append(line.strip().split("\t"))
+
+contigs = [x[0] for x in bed_coords]
+starts = [x[1] for x in bed_coords]
+ends = [x[2] for x in bed_coords]
+
+reference = "./GCF_900128535.fa"
+bam_file = "./reads_on_mussel.bam"
+db = reference
+
+def get_inputs():
+    for contig,start,end in bed_coords:
+        for alg in algo:
+            yield f"results/{contig}_{start}_{end}_{alg}/results.txt"
+        
+rule all:
+    input:
+        get_inputs()
+
+rule:
+    name: f"clean_genome"
+    input:
+        ref_gn = reference,
+    output:
+        "data/cleaned_reference_igda.fasta"
+    conda:
+        "envs/igda.yaml"
+    shell:
+        """
+        fasta2upper {input} {input}.cleaned;
+        fastaclean {input}.cleaned {output}; 
+        """
+
+
+for contig,start,end in bed_coords:
+    rule:
+        name: f"get_bam_from_samtools_{contig}_{start}_{end}"
+        input:
+            bam_file
+        output:
+            f"data/{contig}_{start}_{end}.bam"
+        params:
+            contig = contig,
+            start = start,
+            end = end 
+        run: 
+            shell("samtools view -H {input} | grep -E '@HD|@PG|@RG|@CO|@SQ.*SN:{params.contig}' > {params.contig}_{params.start}_{params.end}.temp.sam")
+            shell("samtools view {input} {params.contig}:{params.start}-{params.end} >> {params.contig}_{params.start}_{params.end}.temp.sam") 
+            shell("samtools view -bh {params.contig}_{params.start}_{params.end}.temp.sam > {output}")
+            shell("samtools index {output}")
+            shell("rm {params.contig}_{params.start}_{params.end}.temp.sam")
+            
+    rule:
+        name: f"run_rvhaplo_{contig}_{start}_{end}"
+        input:
+            f"data/{contig}_{start}_{end}.bam"
+        output:
+            f"results/{contig}_{start}_{end}_rvhaplo/results.txt"
+        conda:
+            "envs/rvhaplo.yaml"
+        params:
+            out = f"results/{contig}_{start}_{end}_rvhaplo",
+            ref_genome = db,
+            time_file = f"benchmarks/{contig}_{start}_{end}_rvhaplo.benchmark.usrbintime"
+        threads:
+            10
+        shell:
+            "cd RVHaplo; /usr/bin/time -v -o ../{params.time_file} ./rvhaplo.sh -i ../{input} -o ../{params.out} -r ../{params.ref_genome} -t 10; cd ..; mv {params.out}/*haplotypes.fasta {output}"
+
+
+    rule:
+        name: f"run_dbghaplo_{contig}_{start}_{end}"
+        input:
+            bam = f"data/{contig}_{start}_{end}.bam",
+            vcf = "lofreq_reads_on_mussel.vcf.gz"
+        output:
+            f"results/{contig}_{start}_{end}_dbghaplo/results.txt"
+        params:
+            ref_genome = db,
+            out = out_dir + f"/{contig}_{start}_{end}_dbghaplo",
+            time_file = f"benchmarks/{contig}_{start}_{end}_dbghaplo.benchmark.usrbintime"
+        threads:
+            1
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} dbghap --preset old-long-reads -b {input.bam} -v {input.vcf} -o {params.out} -t 1 -r {params.ref_genome} --overwrite;
+            cp {params.out}/majority_vote_haplotypes.fasta {output}
+            """
+
+    rule:
+        name: f"run_igda_{contig}_{start}_{end}"
+        input:
+            ref_gn = "data/cleaned_reference_igda.fasta",
+            bam = f"data/{contig}_{start}_{end}.bam"
+        output:
+            out_dir + f"/{contig}_{start}_{end}_igda/results.txt"
+        conda:
+            "envs/igda.yaml"
+        params:
+            out = out_dir + f"/{contig}_{start}_{end}_igda",
+            time_file = f"benchmarks/{contig}_{start}_{end}_igda.benchmark.usrbintime"
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} /bin/sh -c '
+            igda_align_pb {input.bam} {input.ref_gn} {params.out}.sam 10;
+            sam2bam {params.out}.sam {params.out}.bam;
+            igda_pipe_detect -l 300 -m pb {params.out}.bam {input.ref_gn} ../amr_snaketest/igda_contextmodel/pacbio/qv12_NCTC_P6_C4 {params.out}_igda_detect;
+            rm -r {params.out};
+            igda_pipe_phase -m pb -n 10 {params.out}_igda_detect {input.ref_gn} {params.out};
+            cp {params.out}/*.fa {output}'
+            """
+    
+    rule:
+        name: f"run_cliqueSNV_{contig}_{start}_{end}"
+        input:
+            bam = f"data/{contig}_{start}_{end}.bam" 
+        output:
+            out_dir + f"/{contig}_{start}_{end}_cliqueSNV/results.txt"
+        params:
+            out = out_dir + f"/{contig}_{start}_{end}_cliqueSNV",
+            ref_genome = db,
+            time_file = f"benchmarks/{contig}_{start}_{end}_cliqueSNV.benchmark.usrbintime"
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} java -jar clique-snv.jar -m snv-pacbio -in {input} -outDir {params.out} -threads 10;
+            mv {params.out}/*.fasta {output}
+            """ 
+

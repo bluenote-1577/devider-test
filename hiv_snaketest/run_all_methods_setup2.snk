@@ -100,10 +100,10 @@ for num_str in config[setup]['num_strains']:
             out = out_dir + "/{setup}/dbghaplo_{length}_{accuracy}_{coverage}_" + str(num_str),
             time_file = "benchmarks/{setup}/dbghaplo_{length}_{accuracy}_{coverage}_" + str(num_str) + ".benchmark.usrbintime"
         threads:
-            2
+            10
         shell:
             """
-            /usr/bin/time -v -o {params.time_file} dbghaplo -b {input.bam} -v {input.vcf} -o {params.out} -t 2 -r {params.ref_genome} --overwrite;
+            /usr/bin/time -v -o {params.time_file} devider -b {input.bam} -v {input.vcf} -o {params.out} -t 10 -r {params.ref_genome} --overwrite;
             cp {params.out}/majority_vote_haplotypes.fasta {output}
             """
 

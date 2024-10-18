@@ -62,10 +62,10 @@ for instance in config['instances']:
             out = expand(out_dir + "/{arg}_dbghaplo", arg=instance['arg']),
             time_file = expand("benchmarks/{arg}_dbghaplo.benchmark.usrbintime", arg=instance['arg'])
         threads:
-            1
+            2
         shell:
             """
-            /usr/bin/time -v -o {params.time_file} dbghaplo -b {input.bam} -v {input.vcf} -o {params.out} -t 1 -r {params.ref_genome} --overwrite;
+            /usr/bin/time -v -o {params.time_file} devider -b {input.bam} -v {input.vcf} -o {params.out} -t 2 -r {params.ref_genome} --overwrite;
             cp {params.out}/majority_vote_haplotypes.fasta {output}
             """
 

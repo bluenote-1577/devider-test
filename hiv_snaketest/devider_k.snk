@@ -1,0 +1,247 @@
+import os
+
+# Load the configuration file
+configfile: "config.yaml"
+
+# List of algorithms and output directory
+#algorithms = ['cliqueSNV', 'igda', 'dbghaplo', 'rvhaplo', 'cliqueSNV-0.25']
+#algorithms = ['cliqueSNV', 'dbghaplo', 'rvhaplo']
+algorithms = ['dbghaplo']
+out_dir = "results-k"
+
+# Helper function to generate combinations of input files
+def generate_inputs():
+    input_files = []
+
+    # Generating all combinations of setup, algorithm, length, accuracy, and coverage
+    for setup in config.keys():
+        #for length in config[setup]['lengths']:
+        #    for accuracy in config[setup]['read_identities']:
+        for coverage in config[setup]['coverages']:
+            for k in range(10, 31, 3):
+                length = 9000
+                accuracy = 95
+                #input_files.append(f"{out_dir}/{setup}/{algorithm}_{length}_{accuracy}_{coverage}/results.txt")
+                input_files.append(f"{out_dir}/{setup}/{length}_{accuracy}_{coverage}_results-{k}.bam")
+    return input_files
+
+
+# Rule all defines all the final outputs
+rule all:
+    input:
+        generate_inputs()
+
+# Specific rule for dbghaplo
+for setup in config.keys():
+    rule:
+        name: f"run_strainline_{setup}"
+        input:
+            expand(
+                "simulated_reads/{setup}/{genome_base}_{length}_{accuracy}_{coverage}.fastq",
+                setup = setup,
+                genome_base=config[setup]['genomes'],
+                length="{length}",
+                accuracy="{accuracy}",
+                coverage="{coverage}"
+            )
+        output:
+            out_dir + "/{setup}/strainline_{length}_{accuracy}_{coverage}/results.txt"
+        params:
+            ref_genome = config[setup]['ref_genome'],
+            temp_dir = out_dir + "/{setup}/{length}_{accuracy}_{coverage}_strainline",
+            temp_cat = temp("strainline_{length}_{accuracy}_{coverage}_cat.fastq"),
+        threads:
+            3
+        conda:
+            "envs/strainline.yaml"
+        shell:
+            "cat {input} > {params.temp_cat}; ./Strainline/src/strainline.sh -i {params.temp_cat} -o {params.temp_dir} -p ont -t 3; mv {params.temp_dir}/haplotypes.final.fa {output}"
+        
+    rule:
+        name: f"get_bams_{setup}"
+        input: 
+            expand(
+                "simulated_reads/{setup}/{genome_base}_{length}_{accuracy}_{coverage}.fastq",
+                setup = setup,
+                genome_base=config[setup]['genomes'],
+                length="{length}",
+                accuracy="{accuracy}",
+                coverage="{coverage}"
+            )
+        output: 
+            out_dir + "/{setup}/{length}_{accuracy}_{coverage}.bam"
+        params: 
+            ref_genome = config[setup]['ref_genome']
+        threads:
+            3
+        shell:
+            "minimap2 -a {params.ref_genome} {input} -t 3 | samtools sort -o {output}; samtools index {output}"
+    
+    rule:
+        name: f"run_lofreq_{setup}"
+        input:
+            out_dir + "/{setup}/{length}_{accuracy}_{coverage}.bam"
+        output:
+            out_dir + "/{setup}/{length}_{accuracy}_{coverage}.vcf.gz" 
+        params:
+            ref_genome = config[setup]['ref_genome'],
+            no_gzip = out_dir + "/{setup}/{length}_{accuracy}_{coverage}.vcf",
+            time_file = "benchmarks/{setup}/{length}_{accuracy}_{coverage}.lofreq.benchmark.usrbintime"
+        benchmark:
+           "benchmarks/{setup}/{length}_{accuracy}_{coverage}.lofreq.benchmark"
+        shell:
+            "/usr/bin/time -v -o {params.time_file} ~/software/lofreq_star-2.1.4_linux-x86-64/bin/lofreq call -B -f {params.ref_genome} {input} -o {params.no_gzip} --force-overwrite;"
+            "bgzip {params.no_gzip}; bcftools tabix -f {output}"
+
+    rule:
+        name: f"run_dbghaplo_{setup}"
+        input:
+            bam = out_dir + f"/{setup}/" + "{length}_{accuracy}_{coverage}.bam",
+            vcf = out_dir + f"/{setup}/" + "{length}_{accuracy}_{coverage}.vcf.gz" 
+        output:
+            expand(out_dir + "/{setup}/{length}_{accuracy}_{coverage}_results-{k}.txt", k=range(10, 31, 3), setup = setup, length="{length}", accuracy="{accuracy}", coverage="{coverage}")
+        params:
+            ref_genome = config[setup]['ref_genome'],
+            out = expand(out_dir + "/{setup}/dbghaplo-{k}_{length}_{accuracy}_{coverage}", setup = setup, length="{length}", accuracy="{accuracy}", coverage="{coverage}", k=range(10, 31, 3)),
+        threads:
+            10
+        run:
+            i = 0
+            for k in range(10, 31, 3):
+                shell(f"devider -b {input.bam} -v {input.vcf} -k {k} -o {params.out[i]} -t 10 -r {params.ref_genome} --overwrite; cp {params.out[i]}/majority_vote_haplotypes.fasta {output[i]}")
+                i += 1
+
+    # Specific rule for rvhaplo
+    rule:
+        name: f"run_rvhaplo_{setup}"
+        input:
+            out_dir + "/{setup}/{length}_{accuracy}_{coverage}.bam"
+        output:
+            out_dir + "/{setup}/rvhaplo_{length}_{accuracy}_{coverage}/results.txt"
+        conda:
+            "envs/rvhaplo.yaml"
+        benchmark:
+            "benchmarks/{setup}/rvhaplo_{length}_{accuracy}_{coverage}.benchmark"
+        params:
+            out = out_dir + "/{setup}/rvhaplo_{length}_{accuracy}_{coverage}",
+            ref_genome = config[setup]['ref_genome'],
+            time_file = "benchmarks/{setup}/rvhaplo_{length}_{accuracy}_{coverage}.benchmark.usrbintime"
+        threads:
+            10
+        shell:
+            """
+            cd RVHaplo; /usr/bin/time -v -o ../{params.time_file} ./rvhaplo.sh -i ../{input} -o ../{params.out} -r ../{params.ref_genome} -t 10;
+            cd ..; cp {params.out}/*haplotypes.fasta {output}
+            """
+
+    # Specific rule for cliqueSNV
+    rule:
+        name: f"run_cliqueSNV_{setup}-0.25"
+        input:
+            out_dir + "/{setup}/{length}_{accuracy}_{coverage}.bam"
+        output:
+            out_dir + "/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}/results.txt"
+        params:
+            out = out_dir + "/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}",
+            ref_genome = config[setup]['ref_genome'],
+            time_file = "benchmarks/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}.benchmark.usrbintime"
+        benchmark:
+            "benchmarks/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}.benchmark"
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} java -jar clique-snv.jar -m snv-pacbio -in {input} -outDir {params.out} -threads 10 -tf 0.0025;
+            mv {params.out}/*.fasta {output}
+            """ 
+
+
+    # Specific rule for cliqueSNV
+    rule:
+        name: f"run_cliqueSNV_{setup}"
+        input:
+            out_dir + "/{setup}/{length}_{accuracy}_{coverage}.bam"
+        output:
+            out_dir + "/{setup}/cliqueSNV_{length}_{accuracy}_{coverage}/results.txt"
+        params:
+            out = out_dir + "/{setup}/cliqueSNV_{length}_{accuracy}_{coverage}",
+            ref_genome = config[setup]['ref_genome'],
+            time_file = "benchmarks/{setup}/cliqueSNV_{length}_{accuracy}_{coverage}.benchmark.usrbintime"
+        benchmark:
+            "benchmarks/{setup}/cliqueSNV_{length}_{accuracy}_{coverage}.benchmark"
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} java -jar clique-snv.jar -m snv-pacbio -in {input} -outDir {params.out} -threads 10;
+            mv {params.out}/*.fasta {output}
+            """ 
+    
+    rule:
+        name: f"clean_genome_{setup}"
+        input:
+            config[setup]['ref_genome']
+        output:
+            config[setup]['ref_genome'] + ".cleaned.fa"
+        conda:
+            "envs/igda.yaml"
+        shell:
+            """
+            fasta2upper {input} {input}.cleaned;
+            fastaclean {input}.cleaned {output}; 
+            
+            """
+    rule:
+        name: f"run_igda_{setup}"
+        input:
+            ref_gn= config[setup]['ref_genome'] + ".cleaned.fa", 
+            bam = out_dir + "/{setup}/{length}_{accuracy}_{coverage}.bam"
+        output:
+            out_dir + "/{setup}/igda_{length}_{accuracy}_{coverage}/results.txt"
+        conda:
+            "envs/igda.yaml"
+        benchmark:
+            "benchmarks/{setup}/igda_{length}_{accuracy}_{coverage}.benchmark"
+        params:
+            out = out_dir + "/{setup}/igda_{length}_{accuracy}_{coverage}",
+            time_file = "benchmarks/{setup}/igda_{length}_{accuracy}_{coverage}.benchmark.usrbintime"
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} /bin/sh -c '
+            igda_align_ont {input.bam} {input.ref_gn} {params.out}.sam 10;
+            sam2bam {params.out}.sam {params.out}.bam;
+            igda_pipe_detect -m ont {params.out}.bam {input.ref_gn} ./igda_contextmodel/ont/ont_context_effect_read_qv_12_base_qv_12 {params.out}_igda_detect;
+            rm -r {params.out};
+            igda_pipe_phase -m ont -n 10 {params.out}_igda_detect {input.ref_gn} {params.out};
+            cp {params.out}/*.fa {output}'
+            """
+    
+    rule:
+        name: f"results_to_bam_{setup}"
+        input:
+            expand(
+                out_dir + "/{setup}/{length}_{accuracy}_{coverage}_results-{k}.txt",
+                setup = setup,
+                algo = algorithms,
+                length="{length}",
+                accuracy="{accuracy}",
+                coverage="{coverage}",
+                k=range(10, 31, 3)
+            )
+        output:
+            expand(
+                out_dir + "/{setup}/{length}_{accuracy}_{coverage}_results-{k}.bam",
+                setup = setup,
+                algo = algorithms,
+                length="{length}",
+                accuracy="{accuracy}",
+                coverage="{coverage}",
+                k=range(10, 31, 3)
+            )
+        params: 
+            ref_genome = config[setup]['ref_genome']
+        run:
+            for i in range(len(input)):
+                shell(f"minimap2 --MD -a {params.ref_genome} {input[i]} | samtools sort -o {output[i]}; samtools index {output[i]}")

@@ -4,9 +4,9 @@ import os
 configfile: "config.yaml"
 
 # List of algorithms and output directory
-algorithms = ['cliqueSNV', 'igda', 'dbghaplo', 'rvhaplo']
+#algorithms = ['cliqueSNV', 'igda', 'dbghaplo', 'rvhaplo', 'cliqueSNV-0.25']
 #algorithms = ['cliqueSNV', 'dbghaplo', 'rvhaplo']
-#algorithms = ['dbghaplo', 'igda']
+algorithms = ['dbghaplo']
 out_dir = "results"
 
 # Helper function to generate combinations of input files
@@ -19,7 +19,7 @@ def generate_inputs():
             #for length in config[setup]['lengths']:
             #    for accuracy in config[setup]['read_identities']:
             for coverage in config[setup]['coverages']:
-                length = 9000
+                length = 3000
                 accuracy = 95
                 #input_files.append(f"{out_dir}/{setup}/{algorithm}_{length}_{accuracy}_{coverage}/results.txt")
                 input_files.append(f"{out_dir}/{setup}/{algorithm}_{length}_{accuracy}_{coverage}/results.bam")
@@ -107,10 +107,10 @@ for setup in config.keys():
         benchmark:
             "benchmarks/{setup}/dbghaplo_{length}_{accuracy}_{coverage}.benchmark"
         threads:
-            3
+            10
         shell:
             """
-            /usr/bin/time -v -o {params.time_file} dbghaplo -b {input.bam} -v {input.vcf} -o {params.out} -t 3 -r {params.ref_genome} --overwrite;
+            /usr/bin/time -v -o {params.time_file} devider -b {input.bam} -v {input.vcf} -o {params.out} -t 10 -r {params.ref_genome} --overwrite;
             cp {params.out}/majority_vote_haplotypes.fasta {output}
             """
 
@@ -134,8 +134,30 @@ for setup in config.keys():
         shell:
             """
             cd RVHaplo; /usr/bin/time -v -o ../{params.time_file} ./rvhaplo.sh -i ../{input} -o ../{params.out} -r ../{params.ref_genome} -t 10;
-            cd ..; mv {params.out}/*haplotypes.fasta {output}
+            cd ..; cp {params.out}/*haplotypes.fasta {output}
             """
+
+    # Specific rule for cliqueSNV
+    rule:
+        name: f"run_cliqueSNV_{setup}-0.25"
+        input:
+            out_dir + "/{setup}/{length}_{accuracy}_{coverage}.bam"
+        output:
+            out_dir + "/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}/results.txt"
+        params:
+            out = out_dir + "/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}",
+            ref_genome = config[setup]['ref_genome'],
+            time_file = "benchmarks/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}.benchmark.usrbintime"
+        benchmark:
+            "benchmarks/{setup}/cliqueSNV-0.25_{length}_{accuracy}_{coverage}.benchmark"
+        threads:
+            10
+        shell:
+            """
+            /usr/bin/time -v -o {params.time_file} java -jar clique-snv.jar -m snv-pacbio -in {input} -outDir {params.out} -threads 10 -tf 0.0025;
+            mv {params.out}/*.fasta {output}
+            """ 
+
 
     # Specific rule for cliqueSNV
     rule:

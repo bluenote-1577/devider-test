@@ -73,8 +73,8 @@ def af_and_acc(snp_vectors1, truth_vec, true_qnames, qnames_to_coverage, qnames_
                 covered_bases[best_ind].add(pos)
         scores.append(best_score / len(truth_vec[best_ind]))
 
-    af = [len(cb)/len(truth_vec[0]) for cb in covered_bases]
-    af = np.sum(af)/len(af)
+    af_vec = [len(cb)/len(truth_vec[0]) for cb in covered_bases]
+    af = np.sum(af_vec)/len(af_vec)
     hamming_acc = np.sum(scores)/len(scores)
 
     afs_by_stats = []
@@ -87,7 +87,7 @@ def af_and_acc(snp_vectors1, truth_vec, true_qnames, qnames_to_coverage, qnames_
             ani = 100
         af_temp = len(covered_bases[i])/len(truth_vec[i])
         abund = qnames_to_abundance[qname]
-        afs_by_stats.append((coverage, ani, af_temp, abund))
+        afs_by_stats.append((coverage, ani, af_temp, abund, qname))
 
     return hamming_acc, af, afs_by_stats 
 
@@ -236,10 +236,12 @@ for instance in yaml_data['instances']:
         snp_vector = [x[0] for x in snp_vector_qname]
         qnames = [x[1] for x in snp_vector_qname]
         hamming_acc, af, af_by_stats = af_and_acc(snp_vector, true_snp_vector, true_qnames, genomes_to_coverages, qnames_to_ani, arg)
-        for coverage, ani, af_temp, abund in af_by_stats:
-            results_stratified_by_genome.append({'algorithm': alg, 'Coverage': coverage, 'ANI': ani, 'AF': af_temp, 'Abundance': abund})
+        if 'dbghap' in alg:
+            alg = 'devider'
+        for coverage, ani, af_temp, abund, qname in af_by_stats:
+            results_stratified_by_genome.append({'algorithm': alg, 'Coverage': coverage, 'ANI': ani, 'AF': af_temp, 'Abundance': abund, 'Gene name': qname})
         num_contigs_diff = len(snp_vector) - len(true_snp_vector)
-        results.append({'algorithm': alg, 'Wasserstein distance': d, 'Fraction recovered': af, 'Haplotype\noverestimation': num_contigs_diff, 'SNP Hamming error': hamming_acc, 'System time': float(time_results['system_time']), 'Memory (GB)': float(time_results['max_resident_set_size'])/1_000_000, 'User time': float(time_results['user_time'])})
+        results.append({'algorithm': alg, 'Wasserstein distance': d, 'Fraction recovered': af, 'Haplotype deviation': num_contigs_diff, 'SNP Hamming error': hamming_acc, 'System time': float(time_results['system_time']), 'Memory (GB)': float(time_results['max_resident_set_size'])/1_000_000, 'User time': float(time_results['user_time'])})
 
 df = pd.DataFrame(results)
 print(df)
@@ -256,12 +258,13 @@ if first_plot:
     #sns.boxplot(x='algorithm', y='max_rss', data=df, ax=axs[1,2], hue='algorithm')
 
 
-    sns.boxplot(x='algorithm', y='Haplotype\noverestimation', data=df, ax=axs[0], hue = 'algorithm' )
+    sns.boxplot(x='algorithm', y='Haplotype deviation', data=df, ax=axs[0], hue = 'algorithm' )
     sns.boxplot(x='algorithm', y='SNP Hamming error', data=df, ax=axs[1], hue = 'algorithm' )
     sns.boxplot(x='algorithm', y='Fraction recovered', data=df, ax=axs[2], hue = 'algorithm' )
     #sns.boxplot(x='algorithm', y='Wasserstein distance', data=df, ax=axs[1,1], )
     #sns.boxplot(x='algorithm', y='System time', data=df, ax=axs[0,2], )
     #sns.boxplot(x='algorithm', y='Memory (GB)', data=df, ax=axs[1,2], )
+    print(df.groupby('algorithm').mean())
 
     for ax in axs.flat:
         #borderless
@@ -280,6 +283,7 @@ if first_plot:
     plt.show()
 
 strat_df = pd.DataFrame(results_stratified_by_genome)
+strat_df.to_csv('stratified_results.tsv', sep='\t')
 print(strat_df['ANI'])
 #bin into 20 bins for coverage and ani
 strat_df['Coverage'] = pd.cut(strat_df['Coverage'], bins=5)
@@ -295,15 +299,20 @@ strat_df['% identity to ref.'] = strat_df['% identity to ref.'].astype(float)
 # filter 98
 #strat_df = strat_df[strat_df['ANI'] > 98]
 
+#print number of haplotypes at each bin
+print(strat_df.groupby(['% identity to ref.']).size())
+
 print(strat_df)
 fig, axs = plt.subplots(1, 3, figsize=(16/2.54, 4/2.54))
 eb = 'se'
 markers = ['o', 's', '^', 'D']
 
 
+
 sns.lineplot(x='Coverage', y='Fraction recovered', data=strat_df, ax=axs[0], hue='algorithm', errorbar=eb, marker = 'o')
 sns.lineplot(x='% identity to ref.', y='Fraction recovered', data=strat_df[strat_df['% identity to ref.'] > 97.5], ax=axs[1], hue='algorithm', errorbar=eb, marker = 'o')
 sns.lineplot(x='Abundance', y='Fraction recovered', data=strat_df, ax=axs[2], hue='algorithm', errorbar=eb, marker = 'o')
+print(strat_df.groupby(['algorithm', '% identity to ref.'])['Fraction recovered'].mean())
 
 for ax in axs.flat:
     #borderless

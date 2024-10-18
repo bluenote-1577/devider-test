@@ -220,6 +220,9 @@ for instance in yaml_data['instances']:
         snp_vector = [x[0] for x in snp_vector_qname]
         qnames = [x[1] for x in snp_vector_qname]
         hamming_acc, af, af_by_stats = af_and_acc(snp_vector, true_snp_vector, true_qnames, genomes_to_coverages, qnames_to_ani, arg)
+        if 'dbghap' in alg:
+            alg = 'devider'
+
         for coverage, ani, af_temp, abund in af_by_stats:
             results_stratified_by_genome.append({'algorithm': alg, 'Coverage': coverage, 'ANI': ani, 'AF': af_temp, 'Abundance': abund})
         num_contigs_diff = len(snp_vector) - len(true_snp_vector)
@@ -264,6 +267,7 @@ if first_plot:
     axs[0].axhline(0, color='black', linestyle='--')
 
         
+    print(df.groupby('algorithm').mean(), 'TEST')
     plt.tight_layout()
     plt.savefig('../figures/amr_SPIKE_boxes.svg')
     plt.show()

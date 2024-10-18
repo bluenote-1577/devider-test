@@ -1,0 +1,62 @@
+import pandas as pd
+
+# Define the reference genomes based on skani.tsv file
+import pandas as pd
+
+# Load reference genomes from skani.tsv
+reference_genomes = pd.read_csv('skani.tsv', sep='\t')
+
+# Get only the first part of the Ref_name field (before the slash)
+reference_genomes['Ref_name'] = reference_genomes['Ref_file'].apply(lambda x: x.split('/')[-1].split('_genomic')[0])
+
+rule all:
+    input:
+        expand("reads/{name}_simulated.fastq", name=reference_genomes['Ref_name'])
+
+rule extract_10kb_sections:
+    input:
+        gff = "sane_folder/{ref_name}_genomic.gff.gz",
+        genome = "sane_folder/{ref_name}_genomic.fna"
+    output:
+        "extracted/{ref_name}_10kbp.fasta"
+    params:
+        gene_id = "butyryl-CoA:acetate CoA-transferase"  # Adjust if necessary
+    shell:
+        """
+        zgrep 'product={params.gene_id}' {input.gff} | awk '{{print $1,$5,$6,$8}}' | \
+        while read seqid start end strand; do \
+            up_start=$(($start - 5000)); \
+            down_end=$(($end + 5000)); \
+            if [ "$strand" == "+" ]; then \
+                samtools faidx {input.genome} $seqid:$up_start-$down_end >> {output}; \
+            else \
+                samtools faidx {input.genome} $seqid:$up_start-$down_end >> {output}; \
+            fi \
+        done
+        """
+
+rule simulate_reads:
+    input:
+        "extracted/{ref_name}_10kbp.fasta"
+    output:
+        "reads/{ref_name}_simulated.fastq"
+    params:
+        badreads_params = " --quantity 30x --length 7000,3000 --seed 42"  # Adjust badreads parameters
+    shell:
+        """
+        badread simulate {params.badreads_params} --reference {input} > {output}
+        """
+
+rule get_gene_coordinates:
+    input:
+        "sane_folder/{ref_name}_genomic.gff.gz"
+    output:
+        "coordinates/{ref_name}_gene_coords.txt"
+    params:
+        gene_id = "butyryl-CoA:acetate CoA-transferase"  # Adjust gene product ID here if needed
+    shell:
+        """
+        zgrep 'product={params.gene_id}' {input} | awk '{{print $1,$4,$5,$7}}' > {output}
+        """
+
+

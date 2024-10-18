@@ -81,7 +81,10 @@ def af_and_acc(snp_vectors1, truth_vec):
 def wasserstein_distance(snp_vec, abundances, true_snp_vector, true_qnames, genomes_to_coverages):
 
     if len(snp_vec) == 0:
-        return 100
+        return None
+
+    if len(abundances) == 0:
+        return None
 
     M = []
     w1 = [x/np.sum(abundances) for x in abundances]
@@ -155,11 +158,13 @@ def generate_snp_vectors_for_genomes(bam_file, vcf_file, chromosome, algo = None
         snp_vectors.append(snp_vector)
         qnames.append(alignment.query_name)
         query_name = alignment.query_name
-        if algo == 'dbghaplo':
+        if algo == None:
+            ab = None
+        elif algo == 'dbghaplo':
             ab = float(query_name.split(',')[-2].split(':')[-1]) / 100
         elif algo == 'rvhaplo':
             ab = float(query_name.split('_')[5])
-        elif algo == 'cliqueSNV':
+        elif 'cliqueSNV' in algo:
             ab = float(query_name.split('_')[2])
         else:
             ab = None
@@ -194,7 +199,7 @@ algo = ['rvhaplo', 'cliqueSNV', 'igda', 'dbghaplo']
 results = []
 for setup in yaml_data.keys():
     print(setup)
-    read_accuracy = 95
+    read_accuracy = 98
     length = 9000
     for coverage in yaml_data[setup]['coverages']:
         for alg in algo:
@@ -230,13 +235,18 @@ for setup in yaml_data.keys():
                 d = wasserstein_distance(snp_vector, abundances, true_snp_vector, true_qnames, genomes_to_coverages)
             hamming_acc, af = af_and_acc(snp_vector, true_snp_vector)
             num_contigs = len(snp_vector)
-            results.append({'algorithm': alg, "Earth mover's distance\n(abundance weights)": d, 'Fraction recovered': af, 'Haplotype overestimate\n(true = 7)': num_contigs - 7, 'coverage': coverage, length: length, 'read accuracy': read_accuracy, 'setup': setup, 'Hamming SNP distance': hamming_acc, 'system_time': float(time_results['system_time']), 'Memory (GB)': float(time_results['max_resident_set_size'])/1_000_000, 'user_time': float(time_results['user_time']), 'Wall time (s)': float(time_results['wall_clock_time']), 'CPU time (s)': float(time_results['cpu_time'])})
+            if  'dbghaplo' in alg:
+                alg = 'devider'
+            results.append({'algorithm': alg, "Earth mover's distance": d, 'Fraction recovered': af, 'Number of haplotypes\n(true = 7)': num_contigs, 'coverage': coverage, length: length, 'read accuracy': read_accuracy, 'setup': setup, 'Hamming SNP error': hamming_acc * 100, 'system_time': float(time_results['system_time']), 'Memory (GB)': float(time_results['max_resident_set_size'])/1_000_000, 'user_time': float(time_results['user_time']), 'Wall time (s)': float(time_results['wall_clock_time']), 'CPU time (s)': float(time_results['cpu_time'])})
 
 df = pd.DataFrame(results)
 df.to_csv('../figures/accuracy_benchmark2.tsv', sep='\t')
 #print average over fraction recovered
 print(df.groupby(['algorithm'])['Fraction recovered'].mean())
-print(df.groupby(['algorithm'])['Wall time (s)'].max())
+print(df.groupby(['algorithm'])['Number of haplotypes\n(true = 7)'].mean())
+print(df.groupby(['algorithm'])['Hamming SNP error'].mean())
+print(df.groupby(['algorithm'])["Earth mover's distance"].mean())
+print(df.groupby(['algorithm'])['Wall time (s)'].mean())
 print(df.groupby(['algorithm'])['Memory (GB)'].max())
 
 # plot number of contigs, af, hamming_acc, emd versus coverage for each method (line plot)
@@ -246,10 +256,10 @@ ms= 6
 markers = ['s', 'd', 'D' , 'o']
 
 fig, axs = plt.subplots(2, 3, figsize=(16/2.54, 8/2.54))
-sns.lineplot(data=df, x='coverage', y='Haplotype overestimate\n(true = 7)', hue='algorithm', ax=axs[0, 0], markers = markers, alpha=alpha, palette=p, style='algorithm' )
+sns.lineplot(data=df, x='coverage', y='Number of haplotypes\n(true = 7)', hue='algorithm', ax=axs[0, 0], markers = markers, alpha=alpha, palette=p, style='algorithm' )
 sns.lineplot(data=df, x='coverage', y='Fraction recovered', hue='algorithm', ax=axs[0, 1], markers =markers, alpha = alpha, palette=p, style='algorithm')
-sns.lineplot(data=df, x='coverage', y='Hamming SNP distance', hue='algorithm', ax=axs[1, 0], markers =markers, alpha=alpha, palette=p, style='algorithm')
-sns.lineplot(data=df, x='coverage', y="Earth mover's distance\n(abundance weights)", hue='algorithm', ax=axs[1, 1], markers =markers, alpha=alpha, palette=p, style='algorithm')
+sns.lineplot(data=df, x='coverage', y='Hamming SNP error', hue='algorithm', ax=axs[1, 0], markers =markers, alpha=alpha, palette=p, style='algorithm')
+sns.lineplot(data=df, x='coverage', y="Earth mover's distance", hue='algorithm', ax=axs[1, 1], markers =markers, alpha=alpha, palette=p, style='algorithm')
 sns.lineplot(data=df, x='coverage', y='Wall time (s)', hue='algorithm', ax=axs[0, 2], markers = markers, alpha=alpha, palette=p,  style='algorithm')
 sns.lineplot(data=df, x='coverage', y='Memory (GB)', hue='algorithm', ax=axs[1, 2], markers = markers, alpha=alpha, palette=p, style='algorithm')
 
@@ -265,7 +275,7 @@ for ax in axs[0, :]:
     ax.set_xlabel('')
 
 #ohrizontal line
-axs[0,0].axhline(y=0, color='black', linestyle='--')
+axs[0,0].axhline(y=7, color='black', linestyle='--')
 axs[0,1].axhline(y=1, color='black', linestyle='--')
 axs[1,0].axhline(y=0, color='black', linestyle='--')
 axs[1,1].axhline(y=0, color='black', linestyle='--')

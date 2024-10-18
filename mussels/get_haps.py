@@ -11,7 +11,7 @@ sns.set_palette("muted")
 
 # Initialize variables
 #file_path = "./dbghaplo.mussel"
-file_path = "./all-min5/haplotypes.fasta"
+file_path = "./all-min5-10-10/snp_haplotypes.fasta"
 data = {}
 
 # Regular expression to capture the header line fields
@@ -42,8 +42,8 @@ df = pd.DataFrame([(k[0], k[1], v) for k, v in data.items()], columns=["Contig",
 print(df)
 fig,ax = plt.subplots(figsize=(2,2))
 sns.set_palette("muted")
-ax = sns.boxplot(df["Haplotypes"])
-#ax = sns.swarmplot(y='Haplotypes', data=df, color="black")
+#ax = sns.boxplot(df["Haplotypes"])
+ax = sns.swarmplot(y='Haplotypes', data=df)
 ax.set_ylabel("Predicted # of haplotypes\nper region")
 ax.set_title("dbghaplo haplotyping on\ncandidate regions")
 
