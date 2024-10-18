@@ -1,21 +1,21 @@
-	Command being timed: "dbghap -b results/setup1/3000_95_30.bam -v results/setup1/3000_95_30.vcf.gz -o results/setup1/dbghaplo_3000_95_30 -t 2 -r sfu_hivs/OR483991.1.fasta --overwrite"
-	User time (seconds): 5.23
-	System time (seconds): 0.11
-	Percent of CPU this job got: 120%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:04.43
+	Command being timed: "devider -b results/setup1/3000_95_30.bam -v results/setup1/3000_95_30.vcf.gz -o results/setup1/dbghaplo_3000_95_30 -t 10 -r sfu_hivs/OR483991.1.fasta --overwrite"
+	User time (seconds): 5.47
+	System time (seconds): 0.18
+	Percent of CPU this job got: 169%
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:03.33
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 188952
+	Maximum resident set size (kbytes): 189488
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 47076
-	Voluntary context switches: 77
-	Involuntary context switches: 13
+	Minor (reclaiming a frame) page faults: 47380
+	Voluntary context switches: 879
+	Involuntary context switches: 19
 	Swaps: 0
-	File system inputs: 16
-	File system outputs: 2696
+	File system inputs: 30536
+	File system outputs: 2800
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0

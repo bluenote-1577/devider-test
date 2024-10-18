@@ -1,7 +1,7 @@
-Contig:MEG_7756xxDrugsxxbetalactamsxxClass_B_betalactamasesxxVIM,Range:ALL-ALL	Haplotype:0	Haplotype:1	Haplotype:2	Haplotype:3	Haplotype:4	Haplotype:5
-57	1:0.97	0:0.99	0:0.99	0:0.99	0:0.99	0:0.99
-150	1:0.97	0:0.99	0:1.00	0:0.98	0:0.98	0:1.00
-172	1:0.97	0:1.00	1:0.98	1:0.98	1:0.98	1:0.98
-437	0:0.98	0:0.99	0:0.99	0:1.00	1:1.00	0:0.99
-602	0:1.00	0:0.98	1:1.00	0:1.00	0:1.00	0:1.00
-613	0:1.00	0:1.00	1:0.96	1:1.00	1:0.99	2:0.97
+Contig:MEG_7756xxDrugsxxbetalactamsxxClass_B_betalactamasesxxVIM,Range:ALL-ALL	Haplotype:0	Haplotype:1	Haplotype:2	Haplotype:3	Haplotype:4
+57	1:0.97	0:0.99	0:0.99	0:1.00	0:0.99
+150	1:0.97	0:0.99	0:1.00	0:0.99	0:1.00
+172	1:0.97	0:1.00	1:0.98	1:0.99	1:0.98
+437	0:0.98	0:0.99	0:1.00	1:0.56	0:1.00
+602	0:1.00	0:0.98	1:1.00	0:0.99	0:1.00
+613	0:1.00	0:0.99	1:0.95	1:0.99	2:0.98

@@ -1,60 +1,60 @@
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:0,Abundance:2.85,Depth:246.41
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:0,Abundance:1.80,Depth:169.40
+1000000100000001000110000100101010000100000000000000----------------------------
+--------
+
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:1,Abundance:2.83,Depth:246.41
 10000000001111100001100000001001011101001011111110101000------------------------
 --------
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:1,Abundance:2.48,Depth:179.18
-1000000100000001000110000100101010000100000000000000001010000011000-------------
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:2,Abundance:1.44,Depth:97.71
+1000000000000001000110000-000000-00001001010000000000000000000110000000010------
 --------
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:2,Abundance:3.95,Depth:254.95
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:3,Abundance:3.97,Depth:258.71
 100000000011111000111000000010001000010000000000000000000000000000000000000-----
 --------
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:3,Abundance:8.80,Depth:560.37
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:4,Abundance:8.72,Depth:560.37
 0000000100000001110111000001100100000100000000000000001010000011000000001000----
 --------
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:4,Abundance:12.01,Depth:660.48
-10000000001111100001101100001001011101001011111110101100111010110000000110001111
-00000000
-
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:5,Abundance:11.91,Depth:655.10
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:5,Abundance:12.85,Depth:713.32
 00010010000000010001100001001011100001011001111110110001111100111000000110101111
 00101010
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:6,Abundance:6.82,Depth:375.23
-00001100110000010001100001101001000011100000000000000000010000000100000010001111
-00000011
-
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:7,Abundance:16.27,Depth:895.09
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:6,Abundance:16.09,Depth:893.18
 10100000000000000001100000001001000001000111111111100000110000110000001000011110
 11111010
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:8,Abundance:6.98,Depth:383.72
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:7,Abundance:6.76,Depth:375.23
+00001100110000010001100001101001000011100000000000000000010000000100000010001111
+00000011
+
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:8,Abundance:11.90,Depth:660.48
+10000000001111100001101100001001011101001011111110101100111010110000000110001111
+00000000
+
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:9,Abundance:6.91,Depth:383.72
 10000000001111100011100010001100100001000000000000000000000000000000000000000000
 00000000
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:9,Abundance:14.12,Depth:776.60
-11000000000000010000100000001001111101000011111110101000110000110011110011011111
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:10,Abundance:2.26,Depth:145.12
+1000000000000001000110000-0-----------000000000000000000110001110011100011011111
 00000000
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:10,Abundance:6.03,Depth:331.59
-00000000000000000000000000000000000001000000000000000010100000110000000010001111
-00000000
-
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:11,Abundance:3.21,Depth:176.47
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:11,Abundance:3.18,Depth:176.47
 00000000000000000000000000000000000001000000000000000000000000000000000000000000
 00000100
 
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:12,Abundance:1.31,Depth:86.64
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:12,Abundance:13.96,Depth:775.10
+11000000000000010000100000001001111101000011111110101000110000110011110011011111
+00000000
+
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:13,Abundance:5.97,Depth:331.59
+00000000000000000000000000000000000001000000000000000010100000110000000010001111
+00000000
+
+>Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:14,Abundance:1.31,Depth:87.53
 ------000000000000001000010-1000-00001000011111110100000111000000111110110001110
 0-------
-
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:13,Abundance:1.20,Depth:91.03
---------00000001000110000-000000-00001001010000000000000000000110000000010------
---------
-
->Contig:MEG_4362xxMultixxcompoundxxDrug_and_biocide_resistancexxDrug_and_biocide_RND_efflux_pumpsxxOQXB,Range:ALL-ALL,Haplotype:14,Abundance:1.98,Depth:190.38
---------------------------------------000000000000000000110001110011100011011111
-00000000
 

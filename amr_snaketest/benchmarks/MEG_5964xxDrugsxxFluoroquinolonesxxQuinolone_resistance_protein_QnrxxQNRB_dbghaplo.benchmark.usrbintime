@@ -1,21 +1,21 @@
-	Command being timed: "dbghaplo -b data/MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB.bam -v data/MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB.vcf.gz -o results/MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB_dbghaplo -t 1 -r ./clean_megares.fasta --overwrite"
-	User time (seconds): 0.94
+	Command being timed: "devider -b data_spike/MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB.bam -v data_spike/MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB.vcf.gz -o results_spike_dbghap/MEG_5964xxDrugsxxFluoroquinolonesxxQuinolone_resistance_protein_QnrxxQNRB_dbghaplo -t 1 -r ./clean_megares.fasta --overwrite"
+	User time (seconds): 1.03
 	System time (seconds): 0.04
 	Percent of CPU this job got: 99%
-	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:00.98
+	Elapsed (wall clock) time (h:mm:ss or m:ss): 0:01.09
 	Average shared text size (kbytes): 0
 	Average unshared data size (kbytes): 0
 	Average stack size (kbytes): 0
 	Average total size (kbytes): 0
-	Maximum resident set size (kbytes): 62620
+	Maximum resident set size (kbytes): 61896
 	Average resident set size (kbytes): 0
 	Major (requiring I/O) page faults: 0
-	Minor (reclaiming a frame) page faults: 16450
-	Voluntary context switches: 7
-	Involuntary context switches: 5
+	Minor (reclaiming a frame) page faults: 17083
+	Voluntary context switches: 17
+	Involuntary context switches: 8
 	Swaps: 0
-	File system inputs: 0
-	File system outputs: 1328
+	File system inputs: 7680
+	File system outputs: 1312
 	Socket messages sent: 0
 	Socket messages received: 0
 	Signals delivered: 0
